@@ -9,30 +9,6 @@ const notaMinima = parseFloat(prompt('Digite a nota mínima'));
 
 let linhas = ``;
 
-/* Talvez seja interessante criar todo o cenario
-form.addEventListener('submit', function(e) {
-  e.preventDefault();
-
-  const inputNomeAtividade = document.getElementById('nome-atividade');
-  const inputNotaAtividade = document.getElementById('nota-atividade');
-
-  let linha = '<tr>';
-  linha += `<td>${inputNomeAtividade.value}</td>`;
-  linha += `<td>${inputNotaAtividade.value}</td>`;
-  linha += `<td>${inputNotaAtividade.value >= 7 ? imgAprovado : imgReprovado}</td>`;
-  linha += `</tr>`;
-
-  linhas += linha;
-  
-  const corpoTabela = document.querySelector('tbody');
-  corpoTabela.innerHTML = linhas;
-
-  inputNomeAtividade.value = '';
-  inputNotaAtividade.value = '';
-}); */
-
-/* Depois separar as funções */
-
 form.addEventListener('submit', function(e) {
   e.preventDefault();
 
@@ -70,7 +46,7 @@ function atualizaTabela() {
 
 function atualizaMediaFinal() {
   const mediaFinal = calculaMediaFinal();
-  document.getElementById('media-final-valor').innerHTML = mediaFinal;
+  document.getElementById('media-final-valor').innerHTML = mediaFinal.toFixed(2);
   document.getElementById('media-final-resultado').innerHTML = mediaFinal >= notaMinima ? spanAprovado : spanReprovado;
 
 }
